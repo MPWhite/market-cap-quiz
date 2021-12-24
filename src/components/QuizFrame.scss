@@ -14,7 +14,7 @@ $breakpoint-tablet: 400px;
 
 
 .KnownQuizTile {
-  background-color: grey;
+  background-color: #f2cc8f;
   height: 50%;
   padding: 10px;
 
@@ -28,7 +28,7 @@ $breakpoint-tablet: 400px;
 
 .QuestionQuizTile {
   height: 50%;
-  background-color: lime;
+  background-color: #81b29a;
   padding: 10px;
 
   &__Text {
@@ -77,13 +77,14 @@ $breakpoint-tablet: 400px;
   position: fixed;
   left: 10px;
   top: 10px;
-  background-color: magenta;
+  background-color: #3d405b;
   padding: 10px;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   line-height: 30px;
   text-align: center;
+  color: white;
 }
 
 .Versus {

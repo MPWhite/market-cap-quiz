@@ -75,7 +75,6 @@ const AnswerQuizTile = ({knownTicker, unknownTicker, incrementIndex, setGameOver
   )
 }
 
-
 type GameOverParams = {
   score: number;
 }
@@ -110,7 +109,7 @@ const QuizFrame = ({quizOrder}: QuizFrameParams) => {
     setTimeout(() => {
       setShowAnswer(false)
       updateIndex(index + 1)
-    }, 2000)
+    }, 1700)
   }
 
   if (gameOver) {
