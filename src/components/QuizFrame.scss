@@ -1,0 +1,108 @@
+$breakpoint-tablet: 400px;
+
+.QuizFrame {
+  background-color: red;
+  height: 83vh;
+  width: 100vw;
+  position: fixed;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+
+.KnownQuizTile {
+  background-color: grey;
+  height: 50%;
+  padding: 10px;
+
+  &__Text {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+.QuestionQuizTile {
+  height: 50%;
+  background-color: lime;
+  padding: 10px;
+
+  &__Text {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);
+    display: flex;
+    flex-direction: column;
+
+    button {
+      width: 150px;
+      margin: 0 auto;
+      margin-top: 10px;
+      height: 35px;
+      background-color: transparent;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+  }
+}
+
+.GameOver {
+  background-color: lime;
+  height: 100vh;
+
+  &__Modal{
+    position: relative;
+    text-align: center;
+    background-color: magenta;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 30px;
+
+    p {
+      margin-top: 10px;
+    }
+
+    button {
+      margin-top: 10px;
+    }
+  }
+}
+
+.Score {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  background-color: magenta;
+  padding: 10px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.Versus {
+  background-color: white;
+  position: fixed;
+  font-weight: 900;
+  padding: 10px;
+  height: 25px;
+  width: 25px;
+  line-height: 25px;
+  border-radius: 50%;
+  left: 50%;
+  top: 50%;
+
+  @media (max-width: $breakpoint-tablet) {
+    transform: translate(-50%, -50%);
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    transform: translate(-50%);
+  }
+}
