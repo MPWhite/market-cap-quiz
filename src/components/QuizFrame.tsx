@@ -52,18 +52,8 @@ const QuestionQuizTile = ({knownTicker, unknownTicker, incrementIndex, setGameOv
   )
 }
 
-const AnswerQuizTile = ({knownTicker, unknownTicker, incrementIndex, setGameOver}: QuestionQuizTileArgs) => {
-  const knownInfo = companyInfo[knownTicker]
+const AnswerQuizTile = ({unknownTicker, incrementIndex, setGameOver}: QuestionQuizTileArgs) => {
   const unknownInfo = companyInfo[unknownTicker]
-
-  const onCLick = (action: ActionType) => () => {
-    if ((action === "HIGHER" && unknownInfo.market_cap > knownInfo.market_cap)
-      || (action === "LOWER" && unknownInfo.market_cap < knownInfo.market_cap)) {
-      incrementIndex();
-    } else {
-      setGameOver(true);
-    }
-  }
 
   return (
     <div className="QuestionQuizTile">
