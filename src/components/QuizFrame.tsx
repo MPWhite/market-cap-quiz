@@ -64,7 +64,7 @@ const GameOver = ({ score }: GameOverParams) => {
         <div className="GameOver__Share">
           <p>I can't believe people let you invest their money...</p>
         </div>
-        <button onClick={() => {window.location.href = `/${score}`}}>
+        <button onClick={() => {window.location.reload()}}>
           Play Again
         </button>
       </div>
