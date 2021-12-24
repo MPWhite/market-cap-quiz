@@ -68,14 +68,28 @@ const AnswerQuizTile = ({unknownTicker, incrementIndex, setGameOver}: QuestionQu
 type GameOverParams = {
   score: number;
 }
+
+const gameOverPhrases = [
+  "I can't believe people let you invest their money...",
+  "Wow that was bad...",
+  "Study up and maybe one day you'll be able to land a job better than Wells Fargo...",
+  "Study up and maybe one day you'll be able to land a job better than Wells Fargo...",
+  "Study up and maybe one day you'll be able to land a job better than Wells Fargo...",
+  "Some people just weren't cut out for Goldman.",
+  "No real firm will take you after that but you could always go work for your uncle's wealth management company...",
+  "Seriously that was garbage.",
+]
+
 const GameOver = ({ score }: GameOverParams) => {
+  const phrase = gameOverPhrases[Math.floor(Math.random() * gameOverPhrases.length)];
+
   return (
     <div className="GameOver">
       <div className="GameOver__Modal">
         <h1>Game Over</h1>
         <h2>Score: {score}</h2>
         <div className="GameOver__Share">
-          <p>I can't believe people let you invest their money...</p>
+          <p>{phrase}</p>
         </div>
         <button onClick={() => {window.location.reload()}}>
           Play Again

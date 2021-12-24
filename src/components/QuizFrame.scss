@@ -1,7 +1,6 @@
 $breakpoint-tablet: 400px;
 
 .QuizFrame {
-  background-color: red;
   height: 83vh;
   width: 100vw;
   position: fixed;
@@ -39,29 +38,24 @@ $breakpoint-tablet: 400px;
     display: flex;
     flex-direction: column;
 
-    button {
-      width: 150px;
-      margin: 0 auto;
-      margin-top: 10px;
-      height: 35px;
-      background-color: transparent;
-      border: 1px solid black;
-      border-radius: 5px;
-    }
+
   }
 }
 
 .GameOver {
-  background-color: lime;
+  background-color: #3d405b;
   height: 100vh;
 
   &__Modal{
     position: relative;
     text-align: center;
-    background-color: magenta;
+    background-color: #f2cc8f;
     top: 50%;
     transform: translate(0, -50%);
     padding: 30px;
+    width: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
 
     p {
       margin-top: 10px;
@@ -106,4 +100,14 @@ $breakpoint-tablet: 400px;
   @media (min-width: $breakpoint-tablet) {
     transform: translate(-50%);
   }
+}
+
+button {
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 35px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
 }

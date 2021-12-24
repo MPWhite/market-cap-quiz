@@ -1,11 +1,23 @@
 export const companyInfo: Record<string, any> = {
   "AAPL":{
     "name":"Apple Inc.",
-    "market_cap":3045130397600.0
+    "market_cap": 3045130397600.0
   },
-  "MSFT":{
-    "name":"Microsoft Corporation",
-    "market_cap":2501659083941.0
+  "BTC":{
+    "name":"Bitcoin (Crypto)",
+    "market_cap": 963000000000
+  },
+  "ETH":{
+    "name":"Ethereum (Crypto)",
+    "market_cap": 486400000000
+  },
+  "USDT":{
+    "name":"Tethder (Crypto)",
+    "market_cap": 77730000000
+  },
+  "DOGE":{
+    "name":"Dogecoin (Crypto)",
+    "market_cap": 24210000000
   },
   "GOOGL":{
     "name":"Alphabet Inc.",
