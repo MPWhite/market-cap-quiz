@@ -52,6 +52,30 @@ const QuestionQuizTile = ({knownTicker, unknownTicker, incrementIndex, setGameOv
   )
 }
 
+const AnswerQuizTile = ({knownTicker, unknownTicker, incrementIndex, setGameOver}: QuestionQuizTileArgs) => {
+  const knownInfo = companyInfo[knownTicker]
+  const unknownInfo = companyInfo[unknownTicker]
+
+  const onCLick = (action: ActionType) => () => {
+    if ((action === "HIGHER" && unknownInfo.market_cap > knownInfo.market_cap)
+      || (action === "LOWER" && unknownInfo.market_cap < knownInfo.market_cap)) {
+      incrementIndex();
+    } else {
+      setGameOver(true);
+    }
+  }
+
+  return (
+    <div className="QuestionQuizTile">
+      <div className="QuestionQuizTile__Text">
+        <h2>{companyInfo[unknownTicker].name}</h2>
+        <p>Correct! <b>${unknownTicker}</b> has a market cap of <b>${(unknownInfo.market_cap / 10**9).toFixed(1)}B</b></p>
+      </div>
+    </div>
+  )
+}
+
+
 type GameOverParams = {
   score: number;
 }
@@ -79,9 +103,14 @@ type QuizFrameParams = {
 const QuizFrame = ({quizOrder}: QuizFrameParams) => {
   const [index, updateIndex] = useState(0)
   const [gameOver, setGameOver] = useState(false)
+  const [showAnswer, setShowAnswer] = useState(false)
 
   const incrementIndex = () => {
-    updateIndex(index + 1)
+    setShowAnswer(true)
+    setTimeout(() => {
+      setShowAnswer(false)
+      updateIndex(index + 1)
+    }, 2000)
   }
 
   if (gameOver) {
@@ -99,12 +128,23 @@ const QuizFrame = ({quizOrder}: QuizFrameParams) => {
       <div className="Versus">
         <span>VS</span>
       </div>
-      <QuestionQuizTile
-        knownTicker={quizOrder[index]}
-        unknownTicker={quizOrder[index+1]}
-        incrementIndex={incrementIndex}
-        setGameOver={setGameOver}
-      />
+      { showAnswer ? (
+        <AnswerQuizTile
+          knownTicker={quizOrder[index]}
+          unknownTicker={quizOrder[index+1]}
+          incrementIndex={incrementIndex}
+          setGameOver={setGameOver}
+        />
+      ) : (
+        <QuestionQuizTile
+          knownTicker={quizOrder[index]}
+          unknownTicker={quizOrder[index+1]}
+          incrementIndex={incrementIndex}
+          setGameOver={setGameOver}
+        />
+      )
+      }
+
     </div>
   );
 }
