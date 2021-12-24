@@ -12,7 +12,7 @@ export const companyInfo: Record<string, any> = {
     "market_cap": 486400000000
   },
   "USDT":{
-    "name":"Tethder (Crypto)",
+    "name":"Tether (Crypto)",
     "market_cap": 77730000000
   },
   "DOGE":{
